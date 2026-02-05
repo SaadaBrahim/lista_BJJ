@@ -1,5 +1,7 @@
 public class Tecnica extends Bjj{
     private int grado;
+    private String categoria;
+    private Tecnica successiva;
 
     public int getGrado() {
         return grado;
@@ -9,11 +11,29 @@ public class Tecnica extends Bjj{
         this.grado = grado;
     }
 
-    public Tecnica(){}
-    public Tecnica(int grado){
-        this.grado = grado;
+    public String getCategoria() {
+        return categoria;
     }
 
-    
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Tecnica getSuccessiva() {
+        return successiva;
+    }
+
+    public void setSuccessiva(Tecnica successiva) {
+        this.successiva = successiva;
+    }
+
+    public Tecnica(){}
+    public Tecnica(int grado, String categoria, Tecnica successiva){
+        this.grado = grado;
+        this.categoria = categoria;
+        this.successiva = successiva;
+    }
+
+
 
 }
