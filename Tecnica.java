@@ -28,10 +28,11 @@ public class Tecnica extends Bjj{
     }
 
     public Tecnica(){}
-    public Tecnica(int grado, String categoria, Tecnica successiva){
+    public Tecnica(int grado, String categoria, Tecnica successiva, String nome){
         this.grado = grado;
         this.categoria = categoria;
         this.successiva = successiva;
+        super(nome);
     }
 
 
