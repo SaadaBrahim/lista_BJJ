@@ -1,5 +1,5 @@
 public class Nodo{
-  private Computer computer;
+  private Tecnica tecnica;
   private String valore;
   private Nodo next;
 
@@ -20,12 +20,11 @@ public class Nodo{
         this.next = next;
     }
 
-    public void setComputer(Computer pc){
-        this.computer = pc;
+    public Tecnica getTecnica() {
+        return tecnica;
     }
-
-    public Computer getComputer(){
-        return computer;
+    public void setTecnica(Tecnica tecnica) {
+        this.tecnica = tecnica;
     }
 
     public String toString(){

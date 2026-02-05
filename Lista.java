@@ -33,10 +33,9 @@ public void setPrimoRiferimento(Nodo primoRiferimento) {
         aggiungiNodo(valore, cursor, pc);
     }
 
-private void aggiungiNodo(String valore, Nodo posizione, Computer pc){
+private void aggiungiNodo(Nodo posizione, Tecnica tc){
     Nodo nuovoNodo = new Nodo();
-    nuovoNodo.setValore(valore);
-    nuovoNodo.setComputer(pc);
+    nuovoNodo.setTecnica(tc);
     if (primoRiferimento == null) {
         primoRiferimento = nuovoNodo;
     } else if (posizione != null) {
@@ -112,14 +111,14 @@ public int trovaIndice(Nodo nodo) {
     return -1;
 }
 
-public void inserimento(int indice, String valore){
+public void inserimento(int indice, Tecnica tc){
     if (indice < 0 || indice > size) {
         System.out.println("indice non valido");
         return;
     }
     
     Nodo nuovoNodo = new Nodo();
-    nuovoNodo.setValore(valore);
+    nuovoNodo.setTecnica(tc);
     
     if (indice == 0) {
         nuovoNodo.setNext(primoRiferimento);
@@ -134,20 +133,20 @@ public void inserimento(int indice, String valore){
     size++;
 }
 
-public void inserimentoInTesta(String valore, Computer pc){
+public void inserimentoInTesta(Tecnica tc){
     Nodo nuovoNodo = new Nodo();
-    nuovoNodo.setValore(valore);
-        nuovoNodo.setComputer(pc);
+    nuovoNodo.setTecnica(tc);
+
 
     nuovoNodo.setNext(primoRiferimento);
     primoRiferimento = nuovoNodo;
     size++;
 }
 
-public void inserimentoInCoda(String valore, Computer pc){
+public void inserimentoInCoda(Tecnica tc){
     Nodo nuovoNodo = new Nodo();
-    nuovoNodo.setValore(valore);
-    nuovoNodo.setComputer(pc);
+    nuovoNodo.setTecnica(tc);
+
     
     if (primoRiferimento == null) {
         primoRiferimento = nuovoNodo;
@@ -161,15 +160,14 @@ public void inserimentoInCoda(String valore, Computer pc){
 
 }
 
-public void inserimentoInMezzo(int indice, String valore, Computer pc){
+public void inserimentoInMezzo(int indice, Tecnica tc){
     if (indice <= 0 || indice >= size) {
         System.out.println("indice non valido");
         return;
     }
     
     Nodo nuovoNodo = new Nodo();
-    nuovoNodo.setValore(valore);
-        nuovoNodo.setComputer(pc);
+    nuovoNodo.setTecnica(tc);
 
     
     Nodo precedente = raggiungiIndice(indice - 1);
@@ -190,9 +188,9 @@ public void inserimentoInMezzo(int indice, String valore, Computer pc){
         System.out.println();
     }
 
-    public void aggiungiInOrdineAlfabetico(String valore, Computer pc) {
+    public void aggiungiInOrdineAlfabetico(Tecnica tc) {
         if (primoRiferimento == null) {
-            inserimentoInTesta(valore, pc);
+            inserimentoInTesta(tc);
             return;
         }
         
@@ -208,11 +206,11 @@ public void inserimentoInMezzo(int indice, String valore, Computer pc){
 
         
         if (indice == 0) {
-            inserimentoInTesta(valore, pc);
+            inserimentoInTesta(tc);
         } else if (indice >= size) {
-            inserimentoInCoda(valore, pc);
+            inserimentoInCoda(tc);
         } else {
-            inserimentoInMezzo(indice, valore, pc);
+            inserimentoInMezzo(indice, tc);
         }
     }
 
