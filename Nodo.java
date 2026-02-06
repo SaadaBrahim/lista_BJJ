@@ -28,7 +28,7 @@ public class Nodo{
     }
 
     public String toString(){
-        return computer.toString() + "nome " + valore;
+        return tecnica.toString() + "nome " + valore;
     }
 
 }

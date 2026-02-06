@@ -1,12 +1,12 @@
 public class Bjj{
-    private Stirng nome;
+    private String nome;
 
 
-    public Stirng getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(Stirng nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 

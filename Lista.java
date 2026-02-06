@@ -28,9 +28,9 @@ public void setPrimoRiferimento(Nodo primoRiferimento) {
     this.primoRiferimento = primoRiferimento;
 }
 
-    public void accoda(String valore, Computer pc){
+    public void accoda(String valore, Tecnica tc){
         Nodo cursor = raggiungiIndice(size-1);
-        aggiungiNodo(valore, cursor, pc);
+        aggiungiNodo(cursor, tc);
     }
 
 private void aggiungiNodo(Nodo posizione, Tecnica tc){
@@ -198,7 +198,7 @@ public void inserimentoInMezzo(int indice, Tecnica tc){
         int indice = 0;
         
             while (corrente != null &&
-                valore.compareTo(corrente.getValore()) > 0) {
+                tc.getNome().compareTo(corrente.getTecnica().getNome()) > 0) {
                 corrente = corrente.getNext();
                 indice++;
         }
