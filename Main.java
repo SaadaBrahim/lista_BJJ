@@ -13,16 +13,16 @@ public class Main {
         Tecnica tecnica = new Tecnica(1, "fondamentali", tecnica2, "Fondamentali");
 
         System.out.println("Lista iniziale vuota:");
-            Lista.stampaLista(lista);
+            lista.stampaLista();
         System.out.println("Inserimento in testa:");
             lista.inserimentoInTesta(tecnica);
-            Lista.stampaLista(lista);
+            lista.stampaLista();
         System.out.println("Inserimento in coda:");
             lista.inserimentoInCoda(tecnica5);
-            Lista.stampaLista(lista);
+            lista.stampaLista();
         System.out.println("Inserimento in mezzo (indice 1):");
             lista.inserimentoInMezzo(1, tecnica2);
-            Lista.stampaLista(lista);
+            lista.stampaLista();
 
     }
 }

@@ -44,5 +44,10 @@ public class Tecnica extends Bjj{
         return next;
     }
 
+    public int getDifficolta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDifficolta'");
+    }
+
 
 }
