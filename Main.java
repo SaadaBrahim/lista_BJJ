@@ -12,5 +12,7 @@ public class Main {
         Tecnica tecnica2 = new Tecnica(2, "Posizioni", tecnica3, "Posizioni");
         Tecnica tecnica = new Tecnica(1, "fondamentali", tecnica2, "Fondamentali");
 
+        
+
     }
 }

@@ -2,12 +2,13 @@ public class Tecnica extends Bjj{
     private int grado;
     private String categoria;
     private Tecnica successiva;
+    private Tecnica next;
 
     public int getGrado() {
         return grado;
     }
 
-    public void setGrado(int grado) {
+    public void setGrado(int grado) {       
         this.grado = grado;
     }
 
@@ -35,6 +36,13 @@ public class Tecnica extends Bjj{
         super(nome);
     }
 
+    public void setNext(Tecnica next) {
+    this.next = next;
+    }
+
+    public Tecnica getNext() {
+        return next;
+    }
 
 
 }
