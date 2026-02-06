@@ -2,7 +2,6 @@ public class Tecnica extends Bjj{
     private int grado;
     private String categoria;
     private Tecnica successiva;
-    private Tecnica next;
 
     public int getGrado() {
         return grado;
@@ -36,17 +35,9 @@ public class Tecnica extends Bjj{
         super(nome);
     }
 
-    public void setNext(Tecnica next) {
-    this.next = next;
-    }
-
-    public Tecnica getNext() {
-        return next;
-    }
 
     public int getDifficolta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDifficolta'");
+        return grado;
     }
 
 

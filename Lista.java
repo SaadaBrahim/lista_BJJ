@@ -2,9 +2,9 @@
 
 public class Lista {
     private int size;
-    private Tecnica head;
-    private Tecnica tail;
-    private Tecnica cursore;
+    private Nodo head;
+    private Nodo tail;
+    private Nodo cursore;
     
     public Lista() {
         this.size = 0;
@@ -17,11 +17,11 @@ public class Lista {
         return size;
     }
     
-    public Tecnica getHead() {
+    public Nodo getHead() {
         return head;
     }
     
-    public Tecnica getTail() {
+    public Nodo getTail() {
         return tail;
     }
     
@@ -29,7 +29,7 @@ public class Lista {
         return head == null;
     }
     
-    public void inserimentoInTesta(Tecnica tc) {
+    public void inserimentoInTesta(Nodo tc) {
         if (tc == null) return;
         
         tc.setNext(head);
@@ -42,7 +42,7 @@ public class Lista {
         resetCursore();
     }
     
-    public void inserimentoInCoda(Tecnica tc) {
+    public void inserimentoInCoda(Nodo tc) {
         if (tc == null) return;
         
         tc.setNext(null);
@@ -57,7 +57,7 @@ public class Lista {
         resetCursore();
     }
     
-    public void inserimento(int indice, Tecnica tc) {
+    public void inserimento(int indice, Nodo tc) {
         if (tc == null) return;
         
         if (indice < 0 || indice > size) {
@@ -75,7 +75,7 @@ public class Lista {
             return;
         }
         
-        Tecnica precedente = raggiungiNodo(indice - 1);
+        Nodo precedente = raggiungiNodo(indice - 1);
         if (precedente != null) {
             tc.setNext(precedente.getNext());
             precedente.setNext(tc);
@@ -84,17 +84,17 @@ public class Lista {
         }
     }
     
-    private Tecnica raggiungiNodo(int indice) {
+    private Nodo raggiungiNodo(int indice) {
         if (indice < 0 || indice >= size) return null;
         
-        Tecnica corrente = head;
+        Nodo corrente = head;
         for (int i = 0; i < indice; i++) {
             corrente = corrente.getNext();
         }
         return corrente;
     }
     
-    public void elimina(Tecnica nodo) {
+    public void elimina(Nodo nodo) {
         if (head == null || nodo == null) return;
         
         if (head == nodo) {
@@ -111,7 +111,7 @@ public class Lista {
             return;
         }
         
-        Tecnica precedente = head;
+        Nodo precedente = head;
         while (precedente.getNext() != null && precedente.getNext() != nodo) {
             precedente = precedente.getNext();
         }
@@ -136,7 +136,7 @@ public class Lista {
             return;
         }
         
-        Tecnica daEliminare = raggiungiNodo(indice);
+        Nodo daEliminare = raggiungiNodo(indice);
         if (daEliminare != null) {
             elimina(daEliminare);
         }
@@ -146,16 +146,16 @@ public class Lista {
         cursore = head;
     }
     
-    public Tecnica visita() {
+    public Nodo visita() {
         if (cursore == null) {
             return null;
         }
-        Tecnica corrente = cursore;
+         Nodo corrente = cursore;
         cursore = cursore.getNext();
         return corrente;
     }
     
-    public void aggiungiInOrdineAlfabetico(Tecnica tc) {
+    public void aggiungiInOrdineAlfabetico(Nodo tc) {
         if (tc == null) return;
         
         if (head == null || tc.getNome().compareToIgnoreCase(head.getNome()) <= 0) {
@@ -163,7 +163,7 @@ public class Lista {
             return;
         }
         
-        Tecnica corrente = head;
+        Nodo corrente = head;
         
         while (corrente.getNext() != null && 
                tc.getNome().compareToIgnoreCase(corrente.getNext().getNome()) > 0) {
@@ -187,7 +187,7 @@ public class Lista {
             return;
         }
         
-        Tecnica corrente = head;
+        Nodo corrente = head;
         while (corrente != null) {
             System.out.print(corrente.getNome() + " ");
             corrente = corrente.getNext();
@@ -196,12 +196,12 @@ public class Lista {
     }
     
     public void stampaListaCompleta() {
-        Tecnica corrente = head;
+        Nodo corrente = head;
         int contatore = 0;
         
         while (corrente != null) {
             System.out.println(contatore + ". " + corrente.getNome() + " - " + 
-                             corrente.getCategoria() + " (diff: " + corrente.getDifficolta() + ")");
+                             corrente.getTecnica().getCategoria() + " (diff: " + corrente.getTecnica().getDifficolta() + ")");
             corrente = corrente.getNext();
             contatore++;
         }
@@ -213,10 +213,10 @@ public class Lista {
     
     
     
-    public int trovaIndice(Tecnica nodo) {
+    public int trovaIndice(Nodo nodo) {
         if (nodo == null) return -1;
         
-        Tecnica corrente = head;
+        Nodo corrente = head;
         int indice = 0;
         
         while (corrente != null) {
@@ -228,11 +228,11 @@ public class Lista {
         return -1;
     }
     
-    public Tecnica getCursore() {
+    public Nodo getCursore() {
         return cursore;
     }
     
-    public void inserimentoInMezzo(int indice, Tecnica tc) {
+    public void inserimentoInMezzo(int indice, Nodo tc) {
         inserimento(indice, tc);
     }
 }

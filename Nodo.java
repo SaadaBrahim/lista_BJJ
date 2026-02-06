@@ -31,4 +31,13 @@ public class Nodo{
         return tecnica.toString() + "nome " + valore;
     }
 
+    public String getNome() {
+        return valore;
+    }
+
+    public int getCategoria() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCategoria'");
+    }
+
 }
